@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function Posts() {
     const [posts,setPosts] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:8000/posts')
+        fetch('https://instagram-clone-58ky.onrender.com/posts')
         .then(res=>res.json())
         .then(data=>setPosts(data))
         .catch(err=>console.log(err))

@@ -3,7 +3,7 @@ import './index.css'
 import useFetch from './useFetch'
 import { useNavigate } from 'react-router-dom'
 function Stories() {
-  const {data, loading, error} = useFetch('http://localhost:8000/stories');
+  const {data, loading, error} = useFetch('https://instagram-clone-58ky.onrender.com/stories');
   const navigate=useNavigate();
   if(loading && !error){
     return <div>Loading...</div>
