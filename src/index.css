@@ -1,0 +1,41 @@
+.logo-text{
+    width: 100px;
+}
+.bi{
+    margin-right:10px;
+}
+/* .Stories{
+    height: 70px;
+} */
+.dp{
+    height:30px;
+    margin:5px;
+}
+.username{
+    margin:7px;
+}
+.post-image{
+    width:500px;
+}
+.suggestions .dp{
+    margin:0 !important;
+}
+.suggestions .username{
+    margin:4px !important;
+    margin-left:10px !important;
+}
+.stories{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-inline: 6px;
+    padding:3px;
+    background: linear-gradient(45deg, red, yellow, rgb(255, 0, 174));
+}
+.story{
+    height:100vh;
+}
+.ph::placeholder{
+    color:white;
+}
