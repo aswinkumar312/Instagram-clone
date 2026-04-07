@@ -8,10 +8,10 @@ function Profile() {
     const [followers, setFollowers] = useState([]);
     // const [flag, setFlag] = useState(false);
     useEffect(() => {
-        axios.get('http://localhost:8000/profile')
+        axios.get('https://instagram-clone-58ky.onrender.com/profile')
             .then(response => setProfile(response.data))
             .catch(error => console.error('Error fetching profile:', error));
-        axios.get('http://localhost:8000/followers')
+        axios.get('https://instagram-clone-58ky.onrender.com/followers')
             .then(response => setFollowers(response.data))
             .catch(error => console.error('Error fetching followers:', error));
         // setFlag(prev => !prev);
@@ -21,13 +21,13 @@ function Profile() {
         setProfile({...profile, [e.target.name]: e.target.value});
     }
     const handleOnSubmit = async() => {
-        axios.put('http://localhost:8000/profile', profile)
+        axios.put('https://instagram-clone-58ky.onrender.com/profile', profile)
             .then(response => console.log('Profile updated:', response.data))
             .catch(error => console.error('Error updating profile:', error));
         // setFlag(true);
     }
     const handleUnfollow = async(id) => {
-        axios.delete(`http://localhost:8000/followers/${id}`)
+        axios.delete(`https://instagram-clone-58ky.onrender.com/followers/${id}`)
             .then(response => {
                 console.log('Unfollowed:', response.data);            })
             .catch(error => console.error('Error unfollowing user:', error));

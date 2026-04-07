@@ -7,16 +7,16 @@ function Suggestions() {
   // const [profile,setProfile]= useState(null);
   // const [suggestions,setSuggestions] = useState([]);
 
-  const {data:profile, loading:profileLoading, error:profileError} = useFetch('http://localhost:8000/profile');
-  const {data:suggestions, loading:suggestionsLoading, error:suggestionsError} = useFetch('http://localhost:8000/suggestions');
+  const {data:profile, loading:profileLoading, error:profileError} = useFetch('https://instagram-clone-58ky.onrender.com/profile');
+  const {data:suggestions, loading:suggestionsLoading, error:suggestionsError} = useFetch('https://instagram-clone-58ky.onrender.com/suggestions');
 
   // useEffect(()=>{
-  //   fetch('http://localhost:8000/profile')
+  //   fetch('https://instagram-clone-58ky.onrender.com/profile')
   //   .then(res=>res.json())
   //   .then(data=>setProfile(data))
   //   .catch(err=>console.log(err))
 
-  //   fetch('http://localhost:8000/suggestions')
+  //   fetch('https://instagram-clone-58ky.onrender.com/suggestions')
   //   .then(res=>res.json())
   //   .then(data=>setSuggestions(data))
   //   .catch(err=>console.log(err))
@@ -32,7 +32,7 @@ function Suggestions() {
     return <p>Loading...</p>
   }
   const handleFollow = async(id, username, profilePic) => {
-    axios.post(`http://localhost:8000/followers`, { "id": id, "username": username, "profilePic": profilePic })
+    axios.post(`https://instagram-clone-58ky.onrender.com/followers`, { "id": id, "username": username, "profilePic": profilePic })
     .then(response => console.log('Followed:', response.data))
     .catch(error => console.error('Error following user:', error));
   }
