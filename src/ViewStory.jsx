@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 function ViewStory() {
   const { id,tot } = useParams();
-  const {data, loading, error} = useFetch(`http://localhost:8000/stories/${id}`);
+  const {data, loading, error} = useFetch(`https://instagram-clone-58ky.onrender.com/stories/${id}`);
   const navigate=useNavigate();
   // const numId=Number(id);
   // useEffect(()=>{

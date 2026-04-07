@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 function Profile() {
     const [profile, setProfile] = useState(null);
     const [followers, setFollowers] = useState([]);
-    // const [flag, setFlag] = useState(false);
     useEffect(() => {
         axios.get('https://instagram-clone-58ky.onrender.com/profile')
             .then(response => setProfile(response.data))
@@ -14,8 +13,7 @@ function Profile() {
         axios.get('https://instagram-clone-58ky.onrender.com/followers')
             .then(response => setFollowers(response.data))
             .catch(error => console.error('Error fetching followers:', error));
-        // setFlag(prev => !prev);
-    }, [followers]);
+    },[]);
     const x = (e) => { console.log(e) };
     function handleOnChange(e){
         setProfile({...profile, [e.target.name]: e.target.value});
@@ -24,13 +22,13 @@ function Profile() {
         axios.put('https://instagram-clone-58ky.onrender.com/profile', profile)
             .then(response => console.log('Profile updated:', response.data))
             .catch(error => console.error('Error updating profile:', error));
-        // setFlag(true);
     }
     const handleUnfollow = async(id) => {
         axios.delete(`https://instagram-clone-58ky.onrender.com/followers/${id}`)
             .then(response => {
                 console.log('Unfollowed:', response.data);            })
             .catch(error => console.error('Error unfollowing user:', error));
+        setFollowers(prevFollowers => prevFollowers.filter(follower => follower.id !== id));
     }
     return (
         <div className='d-flex'>
